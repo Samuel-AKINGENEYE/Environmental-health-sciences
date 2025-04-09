@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2 Environmental Health Sciences | School of Public Health</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        :root {
+            --primary: #3a7d44; /* Green */
+            --secondary: #2d728f; /* Teal */
+            --dark: #1a281f; /* Dark green */
+            --light: #f5f9f6; /* Light green */
+            --accent: #f4a261; /* Orange */
+            --gray: #6b8f7c; /* Gray-green */
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2d6835;
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #245972;
+            color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+            background-color: rgba(58, 125, 68, 0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 40, 31, 0.7), rgba(26, 40, 31, 0.7)), url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .about-content p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+        
+        .about-features {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            background-color: rgba(58, 125, 68, 0.1);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Courses Section */
+        .courses {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+        }
+        
+        .course-content {
+            padding: 1.5rem;
+        }
+        
+        .course-category {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .course-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .course-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .course-instructor {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .course-instructor .instructor-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(58, 125, 68, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .course-instructor p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .course-duration {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Faculty Section */
+        .faculty {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+        
+        .faculty-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .faculty-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faculty-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .faculty-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background-color: rgba(58, 125, 68, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .faculty-name {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .faculty-position {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .faculty-bio {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .faculty-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .faculty-social a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgba(58, 125, 68, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faculty-social a:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Resources Section */
+        .resources {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .resources-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            background-color: rgba(58, 125, 68, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .resource-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Events Section */
+        .events {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+        
+        .events-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .event-date {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+        }
+        
+        .event-day {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .event-month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .event-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+        
+        .event-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .event-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .event-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .event-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-info-icon {
+            background-color: rgba(58, 125, 68, 0.1);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-info-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .contact-info-text p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        
+        .contact-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(58, 125, 68, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-social a:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .footer-contact i {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-content {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-image {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 1rem;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                margin: 0 auto 10px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links a {
+                justify-content: center;
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .events-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-card {
+                flex-direction: column;
+            }
+            
+            .event-date {
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF1qCqhtZ_N7Gjky_tyHZEg9nrDNq5V7lr5g&s" alt="Environmental Health Logo">
+                    <div class="logo-text">
+                        <h1>Environmental Health Sciences</h1>
+                        <p>School of Public Health</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="#courses"><i class="fas fa-book"></i> Courses</a></li>
+                        <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                        <li><a href="#resources"><i class="fas fa-file-alt"></i> Resources</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bachelor of sciences with honours in Environmental Health Sciences</h1>
+                <p>Explore the intersection of human health and the environment through our comprehensive program at the School of Public Health.</p>
+                <div class="hero-btns">
+                    <a href="#courses" class="btn btn-primary"><i class="fas fa-book-open"></i> View Courses</a>
+                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-user-plus"></i> Join Our Program</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Program</h2>
+            </div>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1631&q=80" alt="Environmental Health Students">
+                </div>
+                <div class="about-content">
+                    <h3>Environmental Health Sciences</h3>
+                    <p>Our program provides students with the knowledge and skills to assess, control, and prevent environmental factors that can potentially affect human health. Through a combination of classroom instruction, laboratory work, and field experiences, students gain practical expertise in this critical public health discipline.</p>
+                    <p>The curriculum builds on foundational concepts to explore advanced topics in environmental health, preparing students for careers in government agencies, private industry, non-profit organizations, and academic research.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Hands-on Learning</h4>
+                                <p>Practical laboratory and field experiences</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Expert Faculty</h4>
+                                <p>Learn from experienced professionals</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Industry Connections</h4>
+                                <p>Strong ties to public health organizations</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Career Preparation</h4>
+                                <p>Internship and job placement support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Courses</h2>
+            </div>
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Environmental Toxicology">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Core Course</span>
+                        <h3 class="course-title">Environmental Toxicology</h3>
+                        <p class="course-description">Study the effects of environmental contaminants on human health and ecosystems, including dose-response relationships and risk assessment.</p>
+                        <div class="course-meta">
+                            <div class="course-instructor">
+                                <div class="instructor-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <p>Dr. Sarah Johnson</p>
+                            </div>
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <p>12 Weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1504194104404-433180773017?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Water Quality">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Core Course</span>
+                        <h3 class="course-title">Water Quality and Health</h3>
+                        <p class="course-description">Examine drinking water treatment, wastewater management, and the relationship between water quality and public health outcomes.</p>
+                        <div class="course-meta">
+                            <div class="course-instructor">
+                                <div class="instructor-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <p>Prof. Michael Chen</p>
+                            </div>
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <p>10 Weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80" alt="Air Pollution">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Core Course</span>
+                        <h3 class="course-title">Air Pollution and Control</h3>
+                        <p class="course-description">Learn about sources of air pollution, health effects, monitoring techniques, and regulatory approaches to air quality management.</p>
+                        <div class="course-meta">
+                            <div class="course-instructor">
+                                <div class="instructor-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <p>Dr. Amina Diallo</p>
+                            </div>
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <p>8 Weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1631&q=80" alt="Food Safety">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Elective</span>
+                        <h3 class="course-title">Food Safety and Sanitation</h3>
+                        <p class="course-description">Explore foodborne illnesses, hazard analysis, and the principles of food protection in various settings.</p>
+                        <div class="course-meta">
+                            <div class="course-instructor">
+                                <div class="instructor-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <p>Prof. David Wilson</p>
+                            </div>
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <p>6 Weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1581093057923-38505ddf4ba1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Waste Management">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Elective</span>
+                        <h3 class="course-title">Solid and Hazardous Waste Management</h3>
+                        <p class="course-description">Study waste generation, collection, treatment, disposal methods, and the public health implications of improper waste management.</p>
+                        <div class="course-meta">
+                            <div class="course-instructor">
+                                <div class="instructor-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <p>Dr. Emily Rodriguez</p>
+                            </div>
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <p>8 Weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Environmental Policy">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Elective</span>
+                        <h3 class="course-title">Environmental Health Policy</h3>
+                        <p class="course-description">Examine the development, implementation, and evaluation of policies designed to protect environmental health.</p>
+                        <div class="course-meta">
+                            <div class="course-instructor">
+                                <div class="instructor-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <p>Prof. James Peterson</p>
+                            </div>
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <p>6 Weeks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="faculty" id="faculty">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Faculty</h2>
+            </div>
+            <div class="faculty-container">
+                <div class="faculty-card">
+                    <div class="faculty-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="faculty-name">Dr. Didace</h3>
+                    <p class="faculty-position">Professor of Food technology and hygiene</p>
+                    <p class="faculty-bio">Expert in Food technology and hygiene with --- years of research experience in food contaminants.</p>
+                    <div class="faculty-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="faculty-name">Prof. Theoneste</h3>
+                    <p class="faculty-position">Lecture of safe water management</p>
+                    <p class="faculty-bio">Specializes in water treatment technologies and their impact on community health outcomes.</p>
+                    <div class="faculty-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="faculty-name">Dr. Banamwana</h3>
+                    <p class="faculty-position">Waste management</p>
+                    <p class="faculty-bio">Researcher focusing on urban water pollution and its disproportionate effects on vulnerable populations.</p>
+                    <div class="faculty-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="faculty-name">Dr. Noel KORUKIRE</h3>
+                    <p class="faculty-position">Country and town planning</p>
+                    <p class="faculty-bio">Expert in planning of contry ad town in relation to public health</p>
+                    <div class="faculty-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Learning Resources</h2>
+            </div>
+            <div class="resources-container">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="resource-title">Course Textbooks</h3>
+                    <p class="resource-description">Access required and recommended textbooks for all environmental health courses in our program.</p>
+                    <a href="#" class="resource-link">View List <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="resource-title">Lecture Notes</h3>
+                    <p class="resource-description">Download comprehensive lecture notes and presentation slides from all courses.</p>
+                    <a href="#" class="resource-link">Access Notes <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="resource-title">Lab Manuals</h3>
+                    <p class="resource-description">Find detailed protocols and instructions for all laboratory exercises and field work.</p>
+                    <a href="#" class="resource-link">View Manuals <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="resource-title">Research Databases</h3>
+                    <p class="resource-description">Access specialized environmental health research databases and journals.</p>
+                    <a href="#" class="resource-link">Explore Databases <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="resource-title">Case Studies</h3>
+                    <p class="resource-description">Review real-world environmental health cases and practice problem-solving.</p>
+                    <a href="#" class="resource-link">Study Cases <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="resource-title">Career Resources</h3>
+                    <p class="resource-description">Find internship opportunities, job postings, and career development tools.</p>
+                    <a href="#" class="resource-link">Explore Careers <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+            </div>
+            <div class="events-container">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="event-day">15</span>
+                        <span class="event-month">June</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Environmental Health Symposium</h3>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>9:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>School Auditorium</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Annual symposium featuring keynote speakers and student research presentations on current environmental health challenges.</p>
+                        <a href="#" class="event-link">Register Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="event-day">22</span>
+                        <span class="event-month">June</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Water Quality Workshop</h3>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>1:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Environmental Lab</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Hands-on workshop covering water sampling techniques and analysis methods used in public health practice.</p>
+                        <a href="#" class="event-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="event-day">05</span>
+                        <span class="event-month">July</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Career Fair</h3>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>10:00 AM - 2:00 PM</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>University Conference Center</span>
+                            </div>
+                        </div>
+                        <p class="event-description">Meet with employers from government agencies, consulting firms, and non-profit organizations hiring environmental health professionals.</p>
+                        <a href="#" class="event-link">View Employers <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions about our Level 2 Environmental Health Sciences program? Contact us using the information below or fill out the form.</p>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Location</h4>
+                            <p>School of Public Health, College of Medicine and Health Sciences</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Phone</h4>
+                            <p>+250 788 123 456</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Email</h4>
+                            <p>ehs-level2@sph.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Office Hours</h4>
+                            <p>Monday-Friday: 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Environmental Health Sciences</h4>
+                    <p>Level 2 program at the School of Public Health, preparing students to address complex environmental health challenges through rigorous academic training and practical experience.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="#courses"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="#faculty"><i class="fas fa-chevron-right"></i> Faculty</a></li>
+                        <li><a href="#resources"><i class="fas fa-chevron-right"></i> Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Program Details</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Curriculum</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Admission Requirements</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tuition & Fees</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Academic Calendar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Student Handbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> School of Public Health, College of Medicine and Health Sciences</p>
+                    <p><i class="fas fa-phone"></i> +250 788 123 456</p>
+                    <p><i class="fas fa-envelope"></i> ehs-level2@sph.edu</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Environmental Health Sciences (Level 2) | School of Public Health. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('#navMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('show');
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Here you would typically send the data to a server
+                    // For this example, we'll just show an alert
+                    alert(`Thank you, ${name}! Your message has been received. We will contact you at ${email} soon.`);
+                    
+                    // Reset the form
+                    contactForm.reset();
+                });
+            }
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Add active class to current section in navigation
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Animation for elements when they come into view
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.course-card, .faculty-card, .resource-card, .event-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initialize elements with opacity 0 and slight offset
+            document.querySelectorAll('.course-card, .faculty-card, .resource-card, .event-card').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+        });
+    </script>
+</body>
+</html>
